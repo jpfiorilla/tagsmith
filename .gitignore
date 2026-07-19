@@ -1,5 +1,11 @@
-# Local runtime artifacts (never commit personal library data)
+# dependencies & build output
+node_modules/
+dist/
+coverage/
+
+# local runtime artifacts (never commit personal library data)
 state.json
+config.json
 *.log
 changes.log
 agent.out.log

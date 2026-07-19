@@ -1,0 +1,19 @@
+{
+  "provider": "anthropic",
+  "model": "claude-haiku-4-5-20251001",
+  "apiKeyEnv": "ANTHROPIC_API_KEY",
+  "features": {
+    "titleCleanup": true,
+    "genre": false
+  },
+  "autonomy": {
+    "mode": "confidence",
+    "confidenceThreshold": 0.85
+  },
+  "dryRun": true,
+  "pollIntervalSeconds": 60,
+  "preferences": {
+    "keepVersionTags": true,
+    "genreTaxonomy": []
+  }
+}
