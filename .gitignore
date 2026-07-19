@@ -1,0 +1,7 @@
+# Local runtime artifacts (never commit personal library data)
+state.json
+*.log
+changes.log
+agent.out.log
+agent.err.log
+.DS_Store
