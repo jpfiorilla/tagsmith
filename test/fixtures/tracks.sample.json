@@ -1,0 +1,145 @@
+[
+  {
+    "persistentId": "8054DA6368D95C37",
+    "name": "Aurora (Remaster)",
+    "artist": "Ryuichi Sakamoto & Alva Noto",
+    "album": "Insen",
+    "genre": "Ambient",
+    "expect": {
+      "cleaned": "Aurora",
+      "changed": true
+    }
+  },
+  {
+    "persistentId": "1D3853374CBF23AA",
+    "name": "The Sprawl (2012 Remastered Version)",
+    "artist": "Sonic Youth",
+    "album": "Daydream Nation",
+    "genre": "Noise Rock",
+    "expect": {
+      "cleaned": "The Sprawl",
+      "changed": true
+    }
+  },
+  {
+    "persistentId": "3DA7D0375631E824",
+    "name": "Immunity (Remaster 2023)",
+    "artist": "Jon Hopkins",
+    "album": "Immunity",
+    "genre": "Microhouse",
+    "expect": {
+      "cleaned": "Immunity",
+      "changed": true
+    }
+  },
+  {
+    "persistentId": "87C5B15CC5D3DE5A",
+    "name": "The Plum Blossom (Remastered 2023)",
+    "artist": "Yusef Lateef",
+    "album": "Eastern Sounds",
+    "genre": "Spiritual Jazz",
+    "expect": {
+      "cleaned": "The Plum Blossom",
+      "changed": true
+    }
+  },
+  {
+    "persistentId": "467C59622B5CEE83",
+    "name": "Happening Tone (33 RPM LP Version)",
+    "artist": "Jan Jelinek",
+    "album": "Tierbeobachtungen",
+    "genre": "Microhouse",
+    "expect": {
+      "cleaned": "Happening Tone",
+      "changed": true
+    }
+  },
+  {
+    "persistentId": "FBB158A29D2BDB28",
+    "name": "Sandy And Niles (Expanded Edition)",
+    "artist": "The Sonny Criss Orchestra",
+    "album": "Sonny's Dream (Birth of the New Cool)",
+    "genre": "Post-Bop",
+    "expect": {
+      "cleaned": "Sandy And Niles",
+      "changed": true
+    }
+  },
+  {
+    "persistentId": "48142725F544B347",
+    "name": "Boy Who Cried Wolf (LP Version)",
+    "artist": "KMD",
+    "album": "Mr. Hood",
+    "genre": "Jazz Rap",
+    "expect": {
+      "cleaned": "Boy Who Cried Wolf",
+      "changed": true
+    }
+  },
+  {
+    "persistentId": "6D870B3C39A755DD",
+    "name": "Odi et Amo - bis (Remastered)",
+    "artist": "Jóhann Jóhannsson",
+    "album": "Englabörn & Variations",
+    "genre": "Chamber",
+    "expect": {
+      "cleaned": "Odi et Amo - bis",
+      "changed": true
+    }
+  },
+  {
+    "persistentId": "F64B9F284CE0E246",
+    "name": "Mono (Instrumental)",
+    "artist": "BADBADNOTGOOD & Ghostface Killah",
+    "album": "Sour Soul (Instrumentals)",
+    "genre": "Instrumental Hip-Hop",
+    "expect": {
+      "cleaned": "Mono (Instrumental)",
+      "changed": false
+    }
+  },
+  {
+    "persistentId": "1CF3DAE086A27A36",
+    "name": "Loop Study Four (Live)",
+    "artist": "Aidan Baker",
+    "album": "Loop Studies",
+    "genre": "Ambient",
+    "expect": {
+      "cleaned": "Loop Study Four (Live)",
+      "changed": false
+    }
+  },
+  {
+    "persistentId": "45521DA9C9B7DECB",
+    "name": "Tabula Rasa: I. Ludus (Live from Bonn, 1977)",
+    "artist": "Gidon Kremer, Saulius Sondeckis, Lithuanian Chamber Orchestra, Tatjana Grindenko & Alfred Schnittke",
+    "album": "Tabula Rasa",
+    "genre": "Orchestral",
+    "expect": {
+      "cleaned": "Tabula Rasa: I. Ludus (Live from Bonn, 1977)",
+      "changed": false
+    }
+  },
+  {
+    "persistentId": "2C39E3A6503AAE7E",
+    "name": "Tabula Rasa: II. Silentium (Live from Bonn, 1977)",
+    "artist": "Gidon Kremer, Saulius Sondeckis, Lithuanian Chamber Orchestra, Tatjana Grindenko & Alfred Schnittke",
+    "album": "Tabula Rasa",
+    "genre": "Orchestral",
+    "expect": {
+      "cleaned": "Tabula Rasa: II. Silentium (Live from Bonn, 1977)",
+      "changed": false
+    }
+  },
+  {
+    "persistentId": "F64B9F284CE0E246",
+    "name": "Mono (Instrumental)",
+    "artist": "BADBADNOTGOOD & Ghostface Killah",
+    "album": "Sour Soul (Instrumentals)",
+    "genre": "Instrumental Hip-Hop",
+    "expect": {
+      "cleaned": "Mono (Instrumental)",
+      "changed": false
+    }
+  }
+]

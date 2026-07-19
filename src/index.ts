@@ -9,6 +9,7 @@ import { loadState, saveState, BASE_DIR } from './state';
 import { decideForTrack, needsAI } from './decide';
 import { planDispositions } from './apply';
 import { logResult, logLine } from './log';
+import { resolveApiKey } from './keychain';
 import { TagDecision } from './types';
 
 function loadConfig(): Config {
@@ -35,7 +36,7 @@ async function main(): Promise<void> {
   // Set up the AI judge if a feature needs it and a key is present.
   let judge: TagJudge | null = null;
   if (config.features.genre || config.features.titleCleanup) {
-    const apiKey = process.env[config.apiKeyEnv];
+    const apiKey = resolveApiKey(config);
     if (apiKey) {
       const prefs: PromptPreferences = {
         keepVersionTags: config.preferences.keepVersionTags,
@@ -44,7 +45,9 @@ async function main(): Promise<void> {
       };
       judge = new TagJudge(createProvider(config, apiKey), config.model, prefs);
     } else {
-      logLine(`AI key env "${config.apiKeyEnv}" not set — using deterministic fast-path only`);
+      logLine(
+        `No API key (env "${config.apiKeyEnv}" or Keychain "tagsmith-anthropic") — using deterministic fast-path only`,
+      );
     }
   }
 

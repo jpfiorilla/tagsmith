@@ -31,7 +31,36 @@ Music, so it polls — the only reliable approach; a 60s interval feels instant.
 ## Requirements
 - macOS with the Music app
 - Node.js ≥ 18
-- (Optional, for the AI layer) an Anthropic API key — bring your own
+- A way to reach Claude for the AI layer — see the two options below
+
+## Two ways to connect Claude
+The AI layer (long-tail titles + genre) can reach Claude two different ways. The
+deterministic fast-path needs neither and always runs.
+
+**A) Autonomous, with an API key (background daemon).** Bring your own Anthropic API key;
+Tagsmith calls the API itself and runs unattended on a schedule. Store the key in the
+macOS Keychain (never in the repo or a plaintext file):
+```bash
+security add-generic-password -a "$USER" -s tagsmith-anthropic -w
+# paste your sk-ant-… key at the prompt
+```
+Tagsmith reads it at runtime (env var `ANTHROPIC_API_KEY` also works). Requires a
+pay-as-you-go API account — a Claude.ai subscription does **not** include API access.
+
+**B) MCP server, no key (uses your existing Claude).** If you have Claude via Desktop,
+Cowork, or a company account but no API key, run Tagsmith as an MCP server. It exposes
+tools and *your* Claude does the reasoning — reads new tracks, decides junk vs. meaningful
+and genre, and calls back to apply. No key, no per-token cost. Register it with your host,
+e.g. Claude Desktop's `claude_desktop_config.json`:
+```json
+{
+  "mcpServers": {
+    "tagsmith": { "command": "node", "args": ["/absolute/path/to/tagsmith/dist/mcp/server.js"] }
+  }
+}
+```
+Then just ask Claude: *"clean up the tags on the albums I added this week."* Tools exposed:
+`list_recent_additions`, `suggest_cleanups`, `apply_tag_change`.
 
 ## Install
 ```bash
@@ -67,14 +96,21 @@ activates when a key is present and the relevant feature is enabled.
   ```
 - When you're happy, set `"dryRun": false` in `config.json`. Takes effect next run.
 
-## Develop
+## Develop & test
 ```bash
 npm install
-npm test        # Jest: fast-path, judge/parse, decision, autonomy, config, provider
+npm test        # Jest — deterministic, offline, CI-safe
 npm run build   # tsc -> dist/
 ```
-The provider is injected, so the whole decision pipeline is unit-tested without any
-network calls.
+Two layers of testing:
+- **Unit + replay (in CI).** The provider is injected, so the whole `judge → decide →
+  autonomy` pipeline is tested with no network. `test/fixtures/tracks.sample.json` is a
+  curated slice of the real library used to regression-test the fast-path, and
+  `test/fixtures/ai-cassette.json` holds recorded Claude responses replayed through the
+  judge — so we test what the model's output actually does to our logic, deterministically.
+- **Live eval (opt-in, needs a key, not in CI).** `npm run eval:live` calls Claude for
+  real over the fixtures and scores results; `npm run record:cassette` refreshes the
+  replay cassette from real responses.
 
 ## Layout
 ```
@@ -87,10 +123,13 @@ src/
   decide.ts             combine fast-path + AI into proposed changes
   apply.ts              autonomy policy (auto / review / confidence)
   config.ts             schema, defaults, validation
+  keychain.ts           resolve API key from env / macOS Keychain
   music/bridge.ts       osascript ↔ Music.app
-  index.ts              one poll cycle
+  mcp/server.ts         MCP server (the no-key path)
+  index.ts              one poll cycle (autonomous path)
 jxa/                    JXA scripts run via osascript
-test/                   Jest suites
+scripts/                opt-in live eval + cassette recorder
+test/                   Jest suites + fixtures/ (curated real sample, AI cassette)
 one-time-cleanup/       the original one-off library cleanup (AppleScript + CSV)
 ```
 

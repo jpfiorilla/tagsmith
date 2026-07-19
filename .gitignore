@@ -11,3 +11,7 @@ changes.log
 agent.out.log
 agent.err.log
 .DS_Store
+
+# personal library export (never commit)
+Library.xml
+*.musiclibrary

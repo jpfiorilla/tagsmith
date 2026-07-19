@@ -1,0 +1,38 @@
+[
+  {
+    "persistentId": "39A46575D032A4C8",
+    "name": "Right On (Single Version)",
+    "artist": "Boogaloo Joe Jones",
+    "album": "Right On Brother",
+    "genre": "Funk",
+    "expect": {
+      "cleanedTitle": "Right On",
+      "suggestedGenre": null,
+      "titleChange": true
+    }
+  },
+  {
+    "persistentId": "CF0DC0FEF7174CFC",
+    "name": "Gasface Refill (Bonus Track)",
+    "artist": "KMD",
+    "album": "Mr. Hood",
+    "genre": "Jazz Rap",
+    "expect": {
+      "cleanedTitle": "Gasface Refill",
+      "suggestedGenre": null,
+      "titleChange": true
+    }
+  },
+  {
+    "persistentId": "F64B9F284CE0E246",
+    "name": "Mono (Instrumental)",
+    "artist": "BADBADNOTGOOD & Ghostface Killah",
+    "album": "Sour Soul (Instrumentals)",
+    "genre": "Instrumental Hip-Hop",
+    "expect": {
+      "cleanedTitle": "Mono (Instrumental)",
+      "suggestedGenre": null,
+      "titleChange": false
+    }
+  }
+]

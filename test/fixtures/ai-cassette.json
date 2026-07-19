@@ -1,0 +1,5 @@
+{
+  "{\"title\":\"Right On (Single Version)\",\"artist\":\"Boogaloo Joe Jones\",\"album\":\"Right On Brother\",\"currentGenre\":\"Funk\"}": "{\"cleanedTitle\":\"Right On\",\"suggestedGenre\":null,\"confidence\":0.9,\"reasoning\":\"stripped commercial single-version tag\"}",
+  "{\"title\":\"Gasface Refill (Bonus Track)\",\"artist\":\"KMD\",\"album\":\"Mr. Hood\",\"currentGenre\":\"Jazz Rap\"}": "```json\n{\"cleanedTitle\":\"Gasface Refill\",\"suggestedGenre\":null,\"confidence\":0.86,\"reasoning\":\"reissue bonus-track marker\"}\n```",
+  "{\"title\":\"Mono (Instrumental)\",\"artist\":\"BADBADNOTGOOD & Ghostface Killah\",\"album\":\"Sour Soul (Instrumentals)\",\"currentGenre\":\"Instrumental Hip-Hop\"}": "{\"cleanedTitle\":\"Mono (Instrumental)\",\"suggestedGenre\":null,\"confidence\":0.95,\"reasoning\":\"Mono is the title; Instrumental is a meaningful version tag\"}"
+}
